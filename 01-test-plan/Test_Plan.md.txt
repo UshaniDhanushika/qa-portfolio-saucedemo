@@ -1,0 +1,122 @@
+# Test Plan: SauceDemo E-Commerce Application
+
+**Author:** Ushani Dhanushika Ganhewage
+**Date:** 2026-10-31
+**Version:** 1.0
+
+## 1. Objective
+To verify that the core functionality of SauceDemo (login, product browsing,
+cart, and checkout) works as expected, and to identify defects before release.
+This project also serves as a practice portfolio for manual, API, and
+automated testing.
+
+## 2. Application Under Test
+- **URL:** https://www.saucedemo.com
+- **Type:** Web-based demo e-commerce application
+
+## 3. Scope
+
+### In Scope
+- Login and logout (all user types)
+- Product listing and sorting
+- Add to cart / remove from cart
+- Checkout flow (information, overview, completion)
+- Menu options (Logout, Reset App State)
+
+### Out of Scope
+- Performance and load testing
+- Security testing
+- Mobile device testing
+- Accessibility testing
+
+## 4. Test Types
+- Functional testing
+- UI/UX testing
+- Negative and boundary testing
+- Regression testing (automated)
+
+## 5. Test Approach
+1. Exploratory testing to understand the application
+2. Test scenarios and detailed test cases written and executed manually
+3. Defects logged with steps, severity, priority and evidence
+4. Core flows automated with Selenium WebDriver, Java, and TestNG
+5. Backend booking API tested separately with Postman (see 04-api-testing)
+
+## 6. Test Environment
+| Item | Detail |
+|---|---|
+| OS | Windows 11 Version 26H2 |
+| Browser | Google Chrome 156.0.8078.74 |
+| Tools | Postman, Selenium, TestNG, Maven, IntelliJ IDEA |
+
+## 7. Test Data
+| User | Password | Purpose |
+|---|---|---|
+| standard_user | secret_sauce | Normal user |
+| locked_out_user | secret_sauce | Blocked user |
+| problem_user | secret_sauce | User with known UI bugs |
+| performance_glitch_user | secret_sauce | Slow responses |
+| error_user | secret_sauce | Error behaviour |
+| visual_user | secret_sauce | Visual defects |
+
+## 8. Entry Criteria
+- Application is accessible
+- Test cases are written and reviewed
+- Test environment is ready
+
+## 9. Exit Criteria
+- All planned test cases are executed
+- All critical and high-severity defects are reported
+
+## 10. Deliverables
+- Test Plan
+- Test Cases (Excel)
+- Bug Reports
+- Postman collection and API report
+- Automation suite and execution report
+
+## 11. Risks
+- The demo site is public and may change or be slow
+- Intentional bugs for some users may be mistaken for real defects
+- Test results may differ if the demo site is updated
+
+## 12. Test Scenarios
+
+### Login
+1. Login with valid credentials
+2. Login with a wrong password
+3. Login with a wrong username
+4. Login with an empty username
+5. Login with an empty password
+6. Login with both fields empty
+7. Login as locked_out_user
+8. Username is case-sensitive
+9. Logout returns the user to the login page
+10. Direct access to /inventory.html without logging in
+
+### Products
+11. All products display with name, price, image, and an Add to cart button
+12. Sort by Name A to Z
+13. Sort by Name Z to A
+14. Sort by Price low to high
+15. Sort by Price high to low
+16. Product detail page opens when clicking a product name
+
+### Cart
+17. Add one item and check the badge shows 1
+18. Add multiple items and check the badge count
+19. Remove an item from the cart
+20. Cart persists after navigating between pages
+
+### Checkout
+21. Complete checkout with valid details
+22. Checkout with an empty first name
+23. Checkout with an empty last name
+24. Checkout with an empty postal code
+25. Item total, tax, and total are calculated correctly
+26. Cancel during checkout returns to the cart
+
+## Revision History
+| Version | Date | Change |
+|---|---|---|
+| 1.0 | 2026-10-31 | Initial test plan |
